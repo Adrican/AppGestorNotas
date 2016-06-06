@@ -27,6 +27,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 public class Mantenimiento extends JFrame {
 	
@@ -60,9 +63,8 @@ public class Mantenimiento extends JFrame {
 	private DefaultTableModel dtm2;
 	private JButton btnEliminar_1;
 	private JScrollPane scrollPane_2;
-	private JButton btnBuscar;
-	private JComboBox comboBox_2;
 	private JTextField textField_5;
+	private JLabel lblModulo_1;
 
 
 	/**
@@ -100,6 +102,7 @@ public class Mantenimiento extends JFrame {
 		);
 		
 		panel = new JPanel();
+		panel.setBackground(new Color(0, 128, 128));
 		tabbedPane.addTab("Profesores", null, panel, null);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -108,16 +111,22 @@ public class Mantenimiento extends JFrame {
 		textField.setColumns(10);
 		
 		lblNombreProfesor = new JLabel("Nombre Profesor");
+		lblNombreProfesor.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNombreProfesor.setForeground(new Color(255, 255, 255));
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		
 		lblApellidos = new JLabel("Apellidos");
+		lblApellidos.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblApellidos.setForeground(new Color(255, 255, 255));
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		
 		lblModulo = new JLabel("Modulo");
+		lblModulo.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblModulo.setForeground(Color.WHITE);
 		
 		btnAñadirProfe = new JButton("A\u00F1adir");
 		btnAñadirProfe.addActionListener(new ActionListener() {
@@ -137,24 +146,28 @@ public class Mantenimiento extends JFrame {
 				dtm.removeRow(table.getSelectedRow());
 			}
 		});
+		
+		JLabel lblProfesores = new JLabel("Profesores");
+		lblProfesores.setFont(new Font("Tahoma", Font.BOLD, 44));
+		lblProfesores.setForeground(new Color(255, 255, 255));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(113)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(lblNombreProfesor)
-							.addGap(163)
-							.addComponent(lblApellidos)
-							.addPreferredGap(ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
-							.addComponent(lblModulo)
-							.addGap(22))
+						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(392)
-							.addComponent(textField_2, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)))
+							.addComponent(textField_2, GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addComponent(lblNombreProfesor)
+							.addGap(124)
+							.addComponent(lblApellidos)
+							.addPreferredGap(ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+							.addComponent(lblModulo)
+							.addGap(22)))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnEliminar)
 					.addGap(29))
@@ -164,19 +177,25 @@ public class Mantenimiento extends JFrame {
 						.addComponent(btnAñadirProfe, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
 						.addComponent(textField_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
 					.addGap(387))
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGap(266)
+					.addComponent(lblProfesores)
+					.addContainerGap(303, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap(77, Short.MAX_VALUE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(lblProfesores)
+					.addGap(18)
 					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 						.addComponent(btnEliminar)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
 								.addGroup(gl_panel.createSequentialGroup()
 									.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-										.addComponent(lblApellidos)
-										.addComponent(lblNombreProfesor))
+										.addComponent(lblNombreProfesor)
+										.addComponent(lblApellidos))
 									.addGap(18))
 								.addGroup(gl_panel.createSequentialGroup()
 									.addComponent(lblModulo)
@@ -202,6 +221,7 @@ public class Mantenimiento extends JFrame {
 		panel.setLayout(gl_panel);
 		
 		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 128, 128));
 		tabbedPane.addTab("Alumnos", null, panel_1, null);
 		
 		scrollPane_1 = new JScrollPane();
@@ -213,10 +233,16 @@ public class Mantenimiento extends JFrame {
 		textField_4.setColumns(10);
 		
 		lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		lblApellidos_1 = new JLabel("Apellidos");
+		lblApellidos_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblApellidos_1.setForeground(new Color(255, 255, 255));
 		
 		lblNewLabel_1 = new JLabel("Modulo");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Programacion", "Entornos de Desarrollo"}));
@@ -237,6 +263,8 @@ public class Mantenimiento extends JFrame {
 		});
 		
 		JLabel lblNota = new JLabel("Nota");
+		lblNota.setForeground(new Color(255, 255, 255));
+		lblNota.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		btnEliminar_1 = new JButton("Eliminar");
 		btnEliminar_1.addActionListener(new ActionListener() {
@@ -247,6 +275,10 @@ public class Mantenimiento extends JFrame {
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
+		
+		JLabel lblAlumnos = new JLabel("Alumnos");
+		lblAlumnos.setFont(new Font("Tahoma", Font.BOLD, 44));
+		lblAlumnos.setForeground(new Color(255, 255, 255));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -254,16 +286,6 @@ public class Mantenimiento extends JFrame {
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_1.createSequentialGroup()
 							.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
-								.addGroup(gl_panel_1.createSequentialGroup()
-									.addGap(98)
-									.addComponent(lblNewLabel)
-									.addGap(121)
-									.addComponent(lblApellidos_1)
-									.addGap(186)
-									.addComponent(lblNewLabel_1)
-									.addPreferredGap(ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
-									.addComponent(lblNota)
-									.addGap(42))
 								.addGroup(gl_panel_1.createSequentialGroup()
 									.addContainerGap()
 									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
@@ -276,7 +298,22 @@ public class Mantenimiento extends JFrame {
 											.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
 											.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 											.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-											.addGap(12)))))
+											.addGap(12))))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_panel_1.createSequentialGroup()
+											.addContainerGap()
+											.addComponent(lblAlumnos))
+										.addGroup(gl_panel_1.createSequentialGroup()
+											.addGap(98)
+											.addComponent(lblNewLabel)
+											.addGap(121)
+											.addComponent(lblApellidos_1)
+											.addPreferredGap(ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+											.addComponent(lblNewLabel_1)))
+									.addGap(143)
+									.addComponent(lblNota)
+									.addGap(42)))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnEliminar_1))
 						.addGroup(gl_panel_1.createSequentialGroup()
@@ -287,15 +324,17 @@ public class Mantenimiento extends JFrame {
 		gl_panel_1.setVerticalGroup(
 			gl_panel_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(81)
+					.addGap(24)
+					.addComponent(lblAlumnos)
+					.addGap(43)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
 						.addComponent(btnEliminar_1)
 						.addGroup(gl_panel_1.createSequentialGroup()
 							.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel)
 								.addComponent(lblApellidos_1)
-								.addComponent(lblNewLabel_1)
-								.addComponent(lblNota))
+								.addComponent(lblNota)
+								.addComponent(lblNewLabel_1))
 							.addGap(11)
 							.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -314,68 +353,55 @@ public class Mantenimiento extends JFrame {
 
 		}, new String[] { "Nombre", "Apellidos", "Nota", "Modulo" });
 
-		table_1.setModel(dtm2);
+		table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Adrian", "Canas", "10", "Entornos de desarrollo"},
+			},
+			new String[] {
+				"Nombre", "Apellidos", "Nota", "Modulo"
+			}
+		));
 		scrollPane_1.setViewportView(table_1);
 		panel_1.setLayout(gl_panel_1);
 		
 		panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 128, 128));
 		tabbedPane.addTab("Modulos", null, panel_2, null);
 		
-		comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Programacion", "Entornos de desarrollo"}));
-		
-		JLabel lblModulo_1 = new JLabel("Modulo");
-		
-		btnBuscar = new JButton("Buscar");
-		btnBuscar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				
-			}
-		});
+		lblModulo_1 = new JLabel("Modulos");
+		lblModulo_1.setForeground(new Color(255, 255, 255));
+		lblModulo_1.setFont(new Font("Tahoma", Font.BOLD, 54));
 		
 		scrollPane_2 = new JScrollPane();
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
+			gl_panel_2.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(91)
-							.addComponent(lblModulo_1))
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(75)
-							.addComponent(btnBuscar))
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(49)
-							.addComponent(comboBox_2, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+					.addGap(134)
 					.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-					.addGap(66))
+					.addContainerGap(143, Short.MAX_VALUE))
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap(461, Short.MAX_VALUE)
+					.addComponent(lblModulo_1)
+					.addGap(305))
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(88)
-							.addComponent(lblModulo_1)
-							.addGap(15)
-							.addComponent(comboBox_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(btnBuscar))
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(52)
-							.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(176, Short.MAX_VALUE))
+					.addGap(28)
+					.addComponent(lblModulo_1)
+					.addGap(97)
+					.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(89, Short.MAX_VALUE))
 		);
 		
 		table_2 = new JTable();
 		table_2.setModel(new DefaultTableModel(
 			new Object[][] {
+				{"Programacion", "Antonio", "Zurita", "10" },
 			},
 			new String[] {
-				"Modulo","Nombre","Apellidos", "Nota"
+				"Modulo", "Nombre", "Apellidos", "Nota"
 			}
 		));
 		scrollPane_2.setViewportView(table_2);
