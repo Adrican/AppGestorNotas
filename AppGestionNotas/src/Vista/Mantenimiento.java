@@ -65,6 +65,7 @@ public class Mantenimiento extends JFrame {
 	private JScrollPane scrollPane_2;
 	private JTextField textField_5;
 	private JLabel lblModulo_1;
+	private Principal princ;
 
 
 	/**
@@ -442,4 +443,7 @@ public class Mantenimiento extends JFrame {
 		ctrl.SELECT(tabla, columna);
 		
 }
+	public void setPrinc(Principal princ) {
+		this.princ = princ;
+	}
 }
