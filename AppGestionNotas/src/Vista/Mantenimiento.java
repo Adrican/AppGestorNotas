@@ -80,7 +80,7 @@ public class Mantenimiento extends JFrame {
 				
 			}
 		});
-		setTitle("Materiales");
+		setTitle("GestorNotas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 840, 489);
 		contentPane = new JPanel();
